@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import NavBar from "./NavBar";
 
 
 const ViewLog = () => {
@@ -22,6 +23,7 @@ const ViewLog = () => {
 
   return (
     <div>
+        <NavBar/>
 
       <div className="container">
         <h1 className="text-center mt-4">VIEW LOGS</h1>

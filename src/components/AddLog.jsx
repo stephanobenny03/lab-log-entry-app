@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-
+import NavBar from "./NavBar";
 
 const AddLog = () => {
   const [input, ChangeInput] = useState({
@@ -42,7 +42,7 @@ const AddLog = () => {
 
   return (
     <div>
-    
+      <NavBar />
 
       <h2 className="text-center p-5">ADD LOG</h2>
 
@@ -51,6 +51,7 @@ const AddLog = () => {
           <div className="col col-12">
             <div className="row g-4">
 
+              {/* Name */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">NAME</label>
                 <input
@@ -62,17 +63,25 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Department */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">DEPARTMENT</label>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
+                  className="form-select"
                   name="dept"
                   value={input.dept}
                   onChange={inputHandler}
-                />
+                >
+                  <option value="">Select Department</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Commerce">Commerce</option>
+                  <option value="Management">Management</option>
+                  <option value="English">English</option>
+                </select>
               </div>
 
+              {/* Semester */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">SEMESTER</label>
                 <input
@@ -84,17 +93,30 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Course */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">COURSE</label>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
+                  className="form-select"
                   name="course"
                   value={input.course}
                   onChange={inputHandler}
-                />
+                >
+                  <option value="">Select Course</option>
+                  <option value="BCA">BCA</option>
+                  <option value="BSc Computer Science">
+                    BSc Computer Science
+                  </option>
+                  <option value="BCom">BCom</option>
+                  <option value="BBA">BBA</option>
+                  <option value="BA English">BA English</option>
+                  <option value="MCA">MCA</option>
+                  <option value="MCom">MCom</option>
+                  <option value="MBA">MBA</option>
+                </select>
               </div>
 
+              {/* System Number */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">SYSTEM NUMBER</label>
                 <input
@@ -106,6 +128,7 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Log In Time */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">LOG IN TIME</label>
                 <input
@@ -117,6 +140,7 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Log Out Time */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">LOG OUT TIME</label>
                 <input
@@ -128,6 +152,7 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Date */}
               <div className="col col-12 col-sm-6">
                 <label className="form-label">DATE</label>
                 <input
@@ -139,6 +164,7 @@ const AddLog = () => {
                 />
               </div>
 
+              {/* Submit Button */}
               <div className="col col-12">
                 <button className="btn btn-dark" onClick={readValue}>
                   Submit
